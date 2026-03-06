@@ -54,7 +54,7 @@ jobs:
         sudo apt-get update
         sudo apt-get install wget -y
         wget https://github.com/aquasecurity/trivy/releases/latest/download/trivy_0.69.3_Linux-64bit.deb
-        sudo dpkg -i trivy_0.50.1_Linux-64bit.deb
+        sudo dpkg -i trivy_0.69.3_Linux-64bit.deb
 
     - name: Scan image
       run: |
