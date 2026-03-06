@@ -1,9 +1,9 @@
-FROM python:3.11
+FROM nginx:alpine
 
 WORKDIR /app
 
-COPY app.py .
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 
-RUN pip install flask
+USER appuser
 
-CMD ["python", "app.py"]
+CMD ["nginx", "-g", "daemon off;"]
