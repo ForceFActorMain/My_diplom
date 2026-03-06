@@ -23,7 +23,7 @@ jobs:
 
     - name: Run OPA Dockerfile policy
       run: |
-        conftest test Dockerfile -p policy/
+        conftest test Dockerfile --parser dockerfile -p policy/
 
   build-image:
 
